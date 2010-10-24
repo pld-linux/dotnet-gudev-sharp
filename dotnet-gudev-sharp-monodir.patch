@@ -1,0 +1,28 @@
+diff -urN mono-gudev-sharp-3867909/gudev/Makefile.am mono-gudev-sharp-3867909.new//gudev/Makefile.am
+--- mono-gudev-sharp-3867909/gudev/Makefile.am	2010-09-01 20:25:58.000000000 +0200
++++ mono-gudev-sharp-3867909.new//gudev/Makefile.am	2010-10-24 13:56:40.691972901 +0200
+@@ -20,7 +20,7 @@
+ 
+ noinst_DATA = gudev-sharp.dll
+ 
+-moduledir = $(libdir)/mono/gudev-sharp-1.0/
++moduledir = $(prefix)/lib/mono/gudev-sharp-1.0/
+ module_SCRIPTS = gudev-sharp.dll.config
+ 
+ all: generated-stamp gudev-sharp.dll
+@@ -41,11 +41,11 @@
+ 	$(build_sources) $(GENERATED_SOURCES)
+ 
+ install-data-local:
+-	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gudev-sharp-1.0 /root $(DESTDIR)$(libdir)";  \
+-        $(GACUTIL) /i $(ASSEMBLY) /f /package gudev-sharp-1.0 /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /i $(ASSEMBLY) /f /package gudev-sharp-1.0 /root $(DESTDIR)$(prefix)/lib";  \
++        $(GACUTIL) /i $(ASSEMBLY) /f /package gudev-sharp-1.0 /root $(DESTDIR)$(prefix)/lib || exit 1;
+ 
+ uninstall-local:
+-	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gudev-sharp-2.0 /root $(DESTDIR)$(libdir)"; \
+-        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gudev-sharp-1.0 /root $(DESTDIR)$(libdir) || exit 1;
++	echo "$(GACUTIL) /u $(ASSEMBLY_NAME) /package gudev-sharp-2.0 /root $(DESTDIR)$(prefix)/lib"; \
++        $(GACUTIL) /u $(ASSEMBLY_NAME) /package gudev-sharp-1.0 /root $(DESTDIR)$(prefix)/lib || exit 1;
+ 
+ EXTRA_DIST = $(API) $(RAW_API) $(sources) $(customs) $(METADATA) AssemblyInfo.cs.in gudev-sharp.dll.config.in
