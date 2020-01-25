@@ -1,5 +1,4 @@
 #
-%include	/usr/lib/rpm/macros.mono
 #
 Summary:	.NET bindings for udev-glib
 Summary(pl.UTF-8):	Wiązania udev-glib dla .NET
