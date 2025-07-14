@@ -43,7 +43,7 @@ Pliki programistyczne GUdev#.
 
 %prep
 %setup -q -n mono-gudev-sharp-3867909/
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal}
