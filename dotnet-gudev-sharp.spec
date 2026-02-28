@@ -4,7 +4,7 @@ Summary:	.NET bindings for udev-glib
 Summary(pl.UTF-8):	Wiązania udev-glib dla .NET
 Name:		dotnet-gudev-sharp
 Version:	0.1
-Release:	1
+Release:	2
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	gudev-sharp-%{version}.tar.gz
