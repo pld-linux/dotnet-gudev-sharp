@@ -4,12 +4,14 @@ Summary:	.NET bindings for udev-glib
 Summary(pl.UTF-8):	Wiązania udev-glib dla .NET
 Name:		dotnet-gudev-sharp
 Version:	0.1
-Release:	2
+Release:	3
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	gudev-sharp-%{version}.tar.gz
 # Source0-md5:	403822d81683ebe2c2a0ce5287f78631
 Patch0:		%{name}-monodir.patch
+# managed dotnet code, no native debug sources
+%undefine	_debugsource_packages
 URL:		http://github.com/mono/gudev-sharp/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -49,7 +51,8 @@ Pliki programistyczne GUdev#.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	CSC=%{_bindir}/mcs
 %{__make} -j1
 
 %install
